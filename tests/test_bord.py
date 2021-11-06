@@ -4,6 +4,7 @@ def test_quitter():
     game=Game_logic()
     diffs = diff(game.play, path="to_test.sim.txt")
     assert not diffs, diffs
+    
 # def test_bord():
     
 #     values = [' ' for x in range(9)]
