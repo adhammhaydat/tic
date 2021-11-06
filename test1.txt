@@ -1,0 +1,22 @@
+Welcome to the tic tac toe game
+Player 1
+Enter the name : 
+> faisal
+
+
+Player 2
+Enter the name : 
+> adham
+
+
+--------------------------------
+              SCOREBOARD        
+--------------------------------
+    faisal  ====>  0
+    adham  ====>  0
+--------------------------------
+
+Turn to choose for faisal
+Enter 1 for X
+Enter 2 for O
+Enter 3 to Quit

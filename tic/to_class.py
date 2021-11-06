@@ -24,15 +24,15 @@ class Game:
     # Function to print the score-board
     @abstractclassmethod
     def print_scoreboard(cls,score_board):
-        print("\t--------------------------------")
-        print("\t              SCOREBOARD       ")
-        print("\t--------------------------------")
+        print("--------------------------------")
+        print("              SCOREBOARD        ")
+        print("--------------------------------")
     
         players = list(score_board.keys())
-        print("\t   ", players[0], "\t    ", score_board[players[0]])
-        print("\t   ", players[1], "\t    ", score_board[players[1]])
+        print(f"    {players[0]}  ====>  {str(score_board[players[0]])}")
+        print(f"    {players[1]}  ====>  {str(score_board[players[1]])}")
     
-        print("\t--------------------------------\n")
+        print("--------------------------------\n")
     
     # Function to check if any player has won
     def check_win(self,player_pos, cur_player):
