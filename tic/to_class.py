@@ -33,7 +33,14 @@ class Game:
         print(f"    {players[1]}  ====>  {str(score_board[players[1]])}")
     
         print("--------------------------------\n")
-    
+        return"""
+        --------------------------------
+                      SCOREBOARD        
+        --------------------------------
+            player1  ====>  0
+            player2  ====>  0
+        --------------------------------
+        """
     # Function to check if any player has won
     def check_win(self,player_pos, cur_player):
     
