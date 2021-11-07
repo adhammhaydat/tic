@@ -1,13 +1,19 @@
 from tic.game_logic import Game_logic
 from flo import diff
-def test_quitter():
+
+def test_the_first():
+    game=Game_logic()
+    diffs = diff(game.play, path="test1.txt")
+    assert not diffs, diffs
+
+def test_second():
     game=Game_logic()
     diffs = diff(game.play, path="to_test.sim.txt")
-    assert not diffs, diffs
-    
-# def test_bord():
-    
-#     values = [' ' for x in range(9)]
-#     a=print_tic_tac_toe(values)
+    assert  not diffs,diffs
 
-#     assert expected==a
+def test_therd():
+    game=Game_logic()
+    diffs = diff(game.play, path="version2.sim.txt")
+    assert  not diffs,diffs
+
+

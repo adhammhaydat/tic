@@ -20,33 +20,3 @@ Turn to choose for faisal
 Enter 1 for X
 Enter 2 for O
 Enter 3 to Quit
-> 1
-
-
-    |     |
-    |     |   
-____|_____|_____
-    |     |
-    |     |   
-____|_____|_____
-    |     |
-    |     |   
-    |     |
-
-
-Player X turn. Which box? : 
-> 5
-
-
-    |     |
-    |     |   
-____|_____|_____
-    |     |
-    |  X  |   
-____|_____|_____
-    |     |
-    |     |   
-    |     |
-
-
-Player O turn. Which box? : 

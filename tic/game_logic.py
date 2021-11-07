@@ -6,12 +6,15 @@ class Game_logic():
     
     def play(self):
         game=Game()
+        print('Welcome to the tic tac toe game')
         print("Player 1")
-        player1 = input("Enter the name : ")
+        print("Enter the name : ")
+        player1=input('> ')
         print("\n")
     
         print("Player 2")
-        player2 = input("Enter the name : ")
+        print("Enter the name : ")
+        player2 =input('> ')
         print("\n")
         
         # Stores the player who chooses X and O
@@ -32,14 +35,14 @@ class Game_logic():
         while True:
     
             # Player choice Menu
-            print("Turn to choose for", cur_player)
+            print("Turn to choose for ", cur_player)
             print("Enter 1 for X")
             print("Enter 2 for O")
             print("Enter 3 to Quit")
     
             # Try exception for CHOICE input
             try:
-                choice = int(input())   
+                choice = int(input("> "))   
             except ValueError:
                 print("Wrong Input!!! Try Again\n")
                 continue
@@ -82,7 +85,11 @@ class Game_logic():
             else:
                 cur_player = player1 
 
-game=Game_logic()
+
+
+if __name__=='__main__':
+    game=Game_logic()
+    game.play()
 
 
 

@@ -1,0 +1,141 @@
+Welcome to the tic tac toe game
+Player 1
+Enter the name : 
+> faisal
+
+
+Player 2
+Enter the name : 
+> adham
+
+
+--------------------------------
+              SCOREBOARD        
+--------------------------------
+    faisal  ====>  0
+    adham  ====>  0
+--------------------------------
+
+Turn to choose for faisal
+Enter 1 for X
+Enter 2 for O
+Enter 3 to Quit
+> 1
+
+
+    |     |
+    |     |   
+____|_____|_____
+    |     |
+    |     |   
+____|_____|_____
+    |     |
+    |     |   
+    |     |
+
+
+Player X turn. Which box? : 
+> 5
+
+
+    |     |
+    |     |   
+____|_____|_____
+    |     |
+    |  X  |   
+____|_____|_____
+    |     |
+    |     |   
+    |     |
+
+
+Player O turn. Which box? : 
+> 5
+Place already filled. Try again!!
+
+
+    |     |
+    |     |   
+____|_____|_____
+    |     |
+    |  X  |   
+____|_____|_____
+    |     |
+    |     |   
+    |     |
+
+
+Player O turn. Which box? : 
+> 8
+
+
+    |     |
+    |     |   
+____|_____|_____
+    |     |
+    |  X  |   
+____|_____|_____
+    |     |
+    |  O  |   
+    |     |
+
+
+Player X turn. Which box? : 
+> 3
+
+
+    |     |
+    |     |  X
+____|_____|_____
+    |     |
+    |  X  |   
+____|_____|_____
+    |     |
+    |  O  |   
+    |     |
+
+
+Player O turn. Which box? : 
+> 6
+
+
+    |     |
+    |     |  X
+____|_____|_____
+    |     |
+    |  X  |  O
+____|_____|_____
+    |     |
+    |  O  |   
+    |     |
+
+
+Player X turn. Which box? : 
+> 7
+
+
+    |     |
+    |     |  X
+____|_____|_____
+    |     |
+    |  X  |  O
+____|_____|_____
+    |     |
+ X  |  O  |   
+    |     |
+
+
+Player X has won the game!!
+
+
+--------------------------------
+              SCOREBOARD        
+--------------------------------
+    faisal  ====>  1
+    adham  ====>  0
+--------------------------------
+
+Turn to choose for adham
+Enter 1 for X
+Enter 2 for O
+Enter 3 to Quit

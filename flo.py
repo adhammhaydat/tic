@@ -21,28 +21,27 @@ def diff(game_play_func, path="", sample=""):
 
     responses = _extract_responses(expected_lines)
 
-    # rolls = _extract_rolls(expected_lines)
 
     # inner function to mock print functionality
     def mock_print(*args):
 
         nonlocal text
 
-        text += "".join(str(args)) + "\n"
+        text += "".join(args) + "\n"
 
     # inner function to mock input functionality
     def mock_input(*args):
-        print(type(args))
+
         nonlocal text
+
+        if not responses:
+            sys.exit(1)
 
         response = responses.pop(0)
 
-        text += "".join(str(args)) + response + "\n"
+        text += "".join(args) + response + "\n"
 
         return response
-
-    # inner function to mock rolling of dice
-    
 
     # store the "real" print & input so we can restore them later
     real_print = builtins.print
@@ -60,6 +59,7 @@ def diff(game_play_func, path="", sample=""):
     # restore the "real" print and output functions
     builtins.print = real_print
     builtins.input = real_input
+    print(text)
 
     return _find_differences(text, expected_lines)
 
@@ -79,22 +79,14 @@ def _parse_expected_lines(path, sample):
 def _extract_responses(lines):
     responses = []
     for line in lines:
-        if line.startswith(" "):
-            response = line.replace(" ", "").strip()
+        if line.startswith(">"):
+            response = line.replace("> ", "").strip()
             responses.append(response)
 
     return responses
 
 
-def _extract_rolls(lines):
-    rolls = []
-    for line in lines:
-        # WARNING: dice rolls MUST start with expected characters
-        if line.startswith(" "):
-            roll = [int(char) for char in line if char.isdigit()]
-            rolls.append(roll)
 
-    return rolls
 
 
 def _find_differences(text, expected_lines):

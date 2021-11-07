@@ -6,33 +6,33 @@ class Game:
         pass
     def print_tic_tac_toe(self,values):
         print("\n")
-        print("\t     |     |")
-        print("\t  {}  |  {}  |  {}".format(values[0], values[1], values[2]))
-        print('\t_____|_____|_____')
+        print("    |     |")
+        print(" {}  |  {}  |  {}".format(values[0], values[1], values[2]))
+        print('____|_____|_____')
     
-        print("\t     |     |")
-        print("\t  {}  |  {}  |  {}".format(values[3], values[4], values[5]))
-        print('\t_____|_____|_____')
+        print("    |     |")
+        print(" {}  |  {}  |  {}".format(values[3], values[4], values[5]))
+        print('____|_____|_____')
     
-        print("\t     |     |")
+        print("    |     |")
     
-        print("\t  {}  |  {}  |  {}".format(values[6], values[7], values[8]))
-        print("\t     |     |")
+        print(" {}  |  {}  |  {}".format(values[6], values[7], values[8]))
+        print("    |     |")
         print("\n")
     
     
     # Function to print the score-board
     @abstractclassmethod
     def print_scoreboard(cls,score_board):
-        print("\t--------------------------------")
-        print("\t              SCOREBOARD       ")
-        print("\t--------------------------------")
+        print("--------------------------------")
+        print("              SCOREBOARD        ")
+        print("--------------------------------")
     
         players = list(score_board.keys())
-        print("\t   ", players[0], "\t    ", score_board[players[0]])
-        print("\t   ", players[1], "\t    ", score_board[players[1]])
+        print(f"    {players[0]}  ====>  {str(score_board[players[0]])}")
+        print(f"    {players[1]}  ====>  {str(score_board[players[1]])}")
     
-        print("\t--------------------------------\n")
+        print("--------------------------------\n")
     
     # Function to check if any player has won
     def check_win(self,player_pos, cur_player):
@@ -70,8 +70,8 @@ class Game:
             
             # Try exception block for MOVE input
             try:
-                print("Player ", cur_player, " turn. Which box? : ", end="")
-                move = int(input()) 
+                print("Player ", cur_player, " turn. Which box? : ")
+                move = int(input("> ")) 
             except ValueError:
                 print("Wrong Input!!! Try Again")
                 continue
