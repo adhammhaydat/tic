@@ -1,7 +1,9 @@
 from abc import abstractclassmethod
+from random import randint
+import copy
+import random
 
-
-class Game:
+class BotGame_hard:
     def __init__(self) -> None:
         pass
     def print_tic_tac_toe(self,values):
@@ -38,10 +40,12 @@ class Game:
     def check_win(self,player_pos, cur_player):
     
         # All possible winning combinations
+        global  soln
         soln = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
     
         # Loop to check if any winning combination is satisfied
-        for x in soln:   
+        for x in soln:
+              # x
             if all(y in player_pos[cur_player] for y in x):
     
                 # Return True if any winning combination satisfies
@@ -56,7 +60,7 @@ class Game:
         return False       
     
     # Function for a single game of Tic Tac Toe
-    def single_game(self,cur_player,playerName):
+    def single_game(self,cur_player,playerChoie):
     
         # Represents the Tic Tac Toe
         values = [' ' for x in range(9)]
@@ -64,6 +68,9 @@ class Game:
         # Stores the positions occupied by X and O
         player_pos = {'X':[], 'O':[]}
         
+
+       
+                    
         # Game Loop for a single game of Tic Tac Toe
         while True:
             self.print_tic_tac_toe(values)
@@ -71,7 +78,11 @@ class Game:
             # Try exception block for MOVE input
             try:
                 print("Player ", cur_player, " turn. Which box? : ")
-                move = int(input("> ")) 
+                print(playerChoie)
+                if playerChoie[cur_player] == 'bot':
+                    move=select_move(player_pos)
+                else:
+                    move = int(input("> ")) 
             except ValueError:
                 print("Wrong Input!!! Try Again")
                 continue
@@ -113,6 +124,69 @@ class Game:
                 cur_player = 'O'
             else:
                 cur_player = 'X'
+
+            def select_move(playerChoie):
+                    diffs=[]
+                     # konw the oponent choice if it was x or o
+                    if cur_player=='X':
+                       choices=playerChoie['O']
+                    else:
+                       choices=playerChoie['X']
+                    # compare user choice with soln
+                    for sol in soln:
+                        sol=set(sol)
+                        choices=choices
+                        print(choices)
+                        
+                    
+
+                    # find the bot move
+                    for li in diffs:
+                        # check the shortest set
+                        shortest=[min(diffs, key=len)]
+                        # move=shortest[0][0]
+                    #     while values[move-1] != ' ':
+                    #           i=1
+                    #           move=shortest[i]
+                    #           i+=1
+                    #     break
+                    # print('m',move)    
+                    
+                  
+                    
+                    # print(move)
+                    move= 9
+                    # to select new number
+                    while values[move-1] != ' ':
+                        move=randint(1,9) 
+                    
+                        #Sort the arrays
+                    
+                    # for nums in soln:
+                        # print('nums',nums)
+                        # print(choices)
+                        # print(playerChoie)
+                        # Compare elements in the sorted arrays
+                        # for num1, num2 in zip(nums,choices):
+                        #     if num1!= num2:
+                        #         return num1
+    
+          
+                    return move
+
+
+
+
+
+
+
+
+
+
+
+
 # if __name__ == "__main__":
 #     def play():
-                       
+
+        
+

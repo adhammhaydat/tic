@@ -1,21 +1,30 @@
-from tic.to_class import Game
-
+from to_class import Game
+from bot import BotGame
+from bot_hard import BotGame_hard
 class Game_logic():
     def __init__(self):
         pass
     
     def play(self):
-        game=Game()
         print('Welcome to the tic tac toe game')
+        
         print("Player 1")
         print("Enter the name : ")
         player1=input('> ')
         print("\n")
     
         print("Player 2")
-        print("Enter the name : ")
-        player2 =input('> ')
-        print("\n")
+        print('type y to play with bot and n to play with other player ?')
+        choice=input('> ')
+        if choice == 'y':
+            player2 ='bot'
+            game=BotGame_hard()
+            print("\n")
+        elif choice == 'n':
+            print("Enter the name : ")
+            player2 =input('> ')
+            print("\n")
+            game=Game()
         
         # Stores the player who chooses X and O
         cur_player = player1
@@ -71,7 +80,7 @@ class Game_logic():
                 print("Wrong Choice!!!! Try Again\n")
     
             # Stores the winner in a single game of Tic Tac Toe
-            winner = game.single_game(options[choice-1])
+            winner = game.single_game(options[choice-1],player_choice)
             
             # Edits the scoreboard according to the winner
             if winner != 'D' :
