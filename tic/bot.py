@@ -68,6 +68,22 @@ class BotGame:
         # Stores the positions occupied by X and O
         player_pos = {'X':[], 'O':[]}
         
+        def select_move(playerChoie):
+                    diffs=[]
+                     # konw the oponent choice if it was x or o
+                    if cur_player=='X':
+                       choices=playerChoie['O']
+                    else:
+                       choices=playerChoie['X']
+                    # compare user choice with soln
+                    print(choices)
+                    print(soln)
+                    move=5
+                    while values[move-1] != ' ':
+                        move=randint(1,9) 
+
+          
+                    return move
 
        
                     
@@ -80,6 +96,7 @@ class BotGame:
                 print("Player ", cur_player, " turn. Which box? : ")
                 print(playerChoie)
                 if playerChoie[cur_player] == 'bot':
+                    move=0
                     move=select_move(player_pos)
                 else:
                     move = int(input("> ")) 
@@ -125,55 +142,7 @@ class BotGame:
             else:
                 cur_player = 'X'
 
-            def select_move(playerChoie):
-                    diffs=[]
-                     # konw the oponent choice if it was x or o
-                    if cur_player=='X':
-                       choices=playerChoie['O']
-                    else:
-                       choices=playerChoie['X']
-                    # compare user choice with soln
-                    for sol in soln:
-                        sol=set(sol)
-                        choices=choices
-                        print(choices)
-                        
-                    
-
-                    # find the bot move
-                    for li in diffs:
-                        # check the shortest set
-                        shortest=[min(diffs, key=len)]
-                        # move=shortest[0][0]
-                    #     while values[move-1] != ' ':
-                    #           i=1
-                    #           move=shortest[i]
-                    #           i+=1
-                    #     break
-                    # print('m',move)    
-                    
-                  
-                    
-                    # print(move)
-                    move=randint(1,9)
-                    # to select new number
-                    while values[move-1] != ' ':
-                        move=randint(1,9) 
-                    
-                        #Sort the arrays
-                    
-                    # for nums in soln:
-                        # print('nums',nums)
-                        # print(choices)
-                        # print(playerChoie)
-                        # Compare elements in the sorted arrays
-                        # for num1, num2 in zip(nums,choices):
-                        #     if num1!= num2:
-                        #         return num1
-    
           
-                    return move
-
 
 
 

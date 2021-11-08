@@ -17,8 +17,14 @@ class Game_logic():
         print('type y to play with bot and n to play with other player ?')
         choice=input('> ')
         if choice == 'y':
-            player2 ='bot'
-            game=BotGame_hard()
+            print('select bot diffeculity e: easy h: hard')
+            choice=input('> ')
+            if choice== 'h':
+               player2 ='bot'
+               game=BotGame_hard()
+            elif choice== 'e':
+                 player2 ='bot'
+                 game=BotGame()
             print("\n")
         elif choice == 'n':
             print("Enter the name : ")
